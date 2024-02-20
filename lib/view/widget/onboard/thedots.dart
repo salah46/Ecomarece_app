@@ -16,7 +16,7 @@ class TheDots extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ...List.generate(onbaordinglist.length, (index) {
-          return GetBuilder<OnbaordController>(builder: (controller) {
+          return Obx( () {
             return AnimatedContainer(
               decoration: BoxDecoration(
                 color: Appcolor.purple,
@@ -28,7 +28,7 @@ class TheDots extends StatelessWidget {
                 ),
               ),
               margin: EdgeInsets.symmetric(horizontal: 5),
-              duration: Duration(seconds: 1),
+              duration: Duration(milliseconds: 900),
               width: controller.currentIndex == index ? 15 : 5,
               height: 5,
             );

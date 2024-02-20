@@ -14,56 +14,47 @@ class SliderOnboard extends StatelessWidget {
     return PageView.builder(
       controller: controller.pageController,
       onPageChanged: (value) {
-        print("${value} value change");
-
         controller.onchanged(value);
       },
       itemCount: onbaordinglist.length,
       itemBuilder: (context, index) {
-        
-        print("${index} hello ");
-        return GetBuilder<OnbaordController>(
-          builder: (controller) {
-            index = controller.currentIndex;
+        // print("${index} hello ");
+        // return Obx(
+        //   () {
+            //
             return Column(
               children: [
                 SizedBox(
                   height: 25,
                 ),
                 Text(
-                  onbaordinglist[index].title.toString(),
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  onbaordinglist[index].title,
+                  style: Theme.of(context).textTheme.displayLarge
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 Container(
+                  
                   child: Image.asset(
-                      fit: BoxFit.fill,
+                      onbaordinglist[index].image,
+                      fit: BoxFit.cover,
                       height: 360,
-                      width: 320,
-                      onbaordinglist[index].image.toString()),
+                      width: 320),
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 Text(
-                  onbaordinglist[index].body.toString(),
+                  onbaordinglist[index].body,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.blueGrey,
-                      height: 2.0,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.bodyLarge
                 )
               ],
             );
           },
         );
-      },
-    );
+     // },
+    
   }
 }

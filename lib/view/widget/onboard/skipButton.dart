@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecomarce_app_project/core/constant/color.dart';
+import 'package:ecomarce_app_project/core/constant/routes.dart';
 import 'package:ecomarce_app_project/view/screen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,7 +17,7 @@ class SkipButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 0),
       child: MaterialButton(
         onPressed: () {
-          Get.to(()=>Login());
+          Get.offAllNamed(Approutes.login);
         },
         child: Text(
           "Skip",

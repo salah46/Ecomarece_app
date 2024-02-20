@@ -24,10 +24,10 @@ class ContinueButton extends StatelessWidget {
       child: MaterialButton(onPressed: () {
         print(controller.currentIndex);
         controller.next();
-      }, child: GetBuilder<OnbaordController>(
-        builder: (controller) {
+      }, child:Obx(
+        () {
           return Text(
-            controller.currentIndex == onbaordinglist.length-1
+            controller.currentIndex.value == onbaordinglist.length-1
                 ? "Finish"
                 : "Continue",
             style: TextStyle(color: Appcolor.white),
