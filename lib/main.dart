@@ -31,9 +31,10 @@ class MyApp extends StatelessWidget {
           displayLarge: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
+            color: Color.fromRGBO(31, 31, 31, 100),
           ),
           bodyLarge: TextStyle(
-              color: Colors.blueGrey,
+              color: Color.fromRGBO(31, 31, 31, 100),
               height: 2.0,
               fontSize: 16,
               fontWeight: FontWeight.w600),

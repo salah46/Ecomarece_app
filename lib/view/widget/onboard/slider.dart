@@ -11,50 +11,37 @@ class SliderOnboard extends StatelessWidget {
   OnbaordController controller = Get.find();
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: controller.pageController,
-      onPageChanged: (value) {
-        controller.onchanged(value);
-      },
-      itemCount: onbaordinglist.length,
-      itemBuilder: (context, index) {
-        // print("${index} hello ");
-        // return Obx(
-        //   () {
-            //
-            return Column(
-              children: [
-                SizedBox(
-                  height: 25,
-                ),
-                Text(
-                  onbaordinglist[index].title,
-                  style: Theme.of(context).textTheme.displayLarge
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Container(
-                  
-                  child: Image.asset(
-                      onbaordinglist[index].image,
-                      fit: BoxFit.cover,
-                      height: 360,
-                      width: 320),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  onbaordinglist[index].body,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: PageView.builder(
+        controller: controller.pageController,
+        onPageChanged: (value) {
+          controller.onchanged(value);
+        },
+        itemCount: onbaordinglist.length,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              Container(
+                child: Image.asset(onbaordinglist[index].image,
+                    fit: BoxFit.cover, height: 420, width: 380),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Text(onbaordinglist[index].title,
+                  style: Theme.of(context).textTheme.displayLarge),
+              SizedBox(
+                height: 30,
+              ),
+              Text(onbaordinglist[index].body,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyLarge
-                )
-              ],
-            );
-          },
-        );
-     // },
-    
+                  style: Theme.of(context).textTheme.bodyLarge)
+            ],
+          );
+        },
+      ),
+    );
+    // },
   }
 }

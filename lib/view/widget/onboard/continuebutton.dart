@@ -11,27 +11,20 @@ class ContinueButton extends StatelessWidget {
   OnbaordController controller = Get.put(OnbaordController());
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 320,
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-        color: Appcolor.purple,
-        borderRadius: BorderRadius.horizontal(
-          left: Radius.circular(40.0), // Horizontal radius for left corners
-          right: Radius.circular(40.0), // Horizontal radius for right corners
-        ),
-      ),
-      child: MaterialButton(onPressed: () {
+    return CircleAvatar(
+      radius: 33,
+      backgroundColor: Appcolor.purple,
+      child: IconButton(onPressed: () {
         print(controller.currentIndex);
         controller.next();
-      }, child:Obx(
+      }, icon: Obx(
         () {
-          return Text(
-            controller.currentIndex.value == onbaordinglist.length-1
-                ? "Finish"
-                : "Continue",
-            style: TextStyle(color: Appcolor.white),
-          );
+          return Icon(
+              controller.currentIndex.value == onbaordinglist.length - 1
+                  ? Icons.check
+                  : Icons.arrow_forward_ios_rounded,
+              size: 30,
+              color: Appcolor.white);
         },
       )),
     );

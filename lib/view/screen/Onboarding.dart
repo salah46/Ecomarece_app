@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:ecomarce_app_project/controller/onboardControlers/onBoardcontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
@@ -21,24 +21,22 @@ class Onboarding extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(flex: 2, child: SliderOnboard()),
+            SizedBox(
+              height: 10,
+            ),
+            SkipButton(),
+            Expanded(flex: 4, child: SliderOnboard()),
             Expanded(
                 flex: 1,
-                child: Column(
-                  children:  [
-                    SizedBox(
-                      height: 40,
-                    ),
-                    TheDots(),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    ContinueButton(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    SkipButton()
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TheDots(),
+                      ContinueButton(),
+                    ],
+                  ),
                 ))
           ],
         ),

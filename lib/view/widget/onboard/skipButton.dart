@@ -13,20 +13,25 @@ class SkipButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 0),
-      child: MaterialButton(
-        onPressed: () {
-          Get.offAllNamed(Approutes.login);
-        },
-        child: Text(
-          "Skip",
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: Appcolor.purple,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(vertical: 0),
+          child: MaterialButton(
+            onPressed: () {
+              Get.offAllNamed(Approutes.login);
+            },
+            child: Text(
+              "Skip",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Appcolor.purple,
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }
