@@ -3,6 +3,7 @@ import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:ecomarce_app_project/routes.dart';
 import 'package:ecomarce_app_project/view/screen/Onboarding.dart';
 import 'package:ecomarce_app_project/view/screen/langchoose.dart';
+import 'package:ecomarce_app_project/view/screen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: LangChoose(),
+      home: Login(),
       routes: routes,
     );
   }

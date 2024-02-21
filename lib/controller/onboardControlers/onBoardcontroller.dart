@@ -11,7 +11,7 @@ class OnbaordController extends GetxController {
   next() {
     currentIndex++;
     if (currentIndex > onbaordinglist.length - 1) {
-      Get.offAllNamed(Approutes.login);
+      Get.offNamed(Approutes.login);
     }
     pageController.animateToPage(currentIndex.value,
         duration: Duration(milliseconds: 900), curve: Curves.ease);
@@ -19,14 +19,10 @@ class OnbaordController extends GetxController {
 
   onchanged(int val) {
     currentIndex.value = val;
-    if (currentIndex > onbaordinglist.length) {
-      Get.to(() => Login());
-    }
   }
 
   @override
   void onInit() {
-    // TODO: implement onInit
     pageController = PageController();
     super.onInit();
   }
