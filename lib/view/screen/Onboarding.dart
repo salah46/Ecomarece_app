@@ -2,10 +2,10 @@
 
 import 'package:ecomarce_app_project/controller/onboardControlers/onBoardcontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
-import 'package:ecomarce_app_project/view/widget/onboard/continuebutton.dart';
-import 'package:ecomarce_app_project/view/widget/onboard/skipButton.dart';
-import 'package:ecomarce_app_project/view/widget/onboard/slider.dart';
-import 'package:ecomarce_app_project/view/widget/onboard/thedots.dart';
+import 'package:ecomarce_app_project/view/widget/onboardwidget/continuebutton.dart';
+import 'package:ecomarce_app_project/view/widget/onboardwidget/skipButton.dart';
+import 'package:ecomarce_app_project/view/widget/onboardwidget/slider.dart';
+import 'package:ecomarce_app_project/view/widget/onboardwidget/thedots.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

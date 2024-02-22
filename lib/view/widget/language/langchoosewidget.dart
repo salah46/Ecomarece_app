@@ -29,7 +29,8 @@ class Langchoosewidget extends StatelessWidget {
         ),
         Text(
           "1".tr,
-          style: Theme.of(context).textTheme.displayLarge,
+          style:
+              Theme.of(context).textTheme.displaySmall!.copyWith(fontSize: 30),
         ),
         Spacer(
           flex: 1,

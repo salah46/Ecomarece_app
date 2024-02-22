@@ -2,7 +2,7 @@
 
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/routes.dart';
-import 'package:ecomarce_app_project/view/screen/login.dart';
+import 'package:ecomarce_app_project/view/screen/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';

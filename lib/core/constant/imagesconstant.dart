@@ -5,5 +5,11 @@ class AppImagesConstantes {
   static String onbaordingimage3 = "$root/Onboard3.png";
   static String onbaordingimage4 = "$root/Onboard4.png";
   static String langchooseimage = "$root/language.png";
+  static String logo = "$root/logo.png";
+  static String x = "$root/twitter(1).png";
+  static String facebook = "$root/facebook.png";
+  static String google = "$root/search.png";
+  static String checkmail = "$root/Checkmail.png";
+  static String verify = "$root/verify.png";
+  static String resetpassword = "$root/resetpassword.png";
 }
-  
