@@ -6,21 +6,33 @@ class LoginController extends GetxController {
   late TextEditingController emailAddressTextController;
 
   late TextEditingController passwordTextController;
-   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+  RxBool secure = false.obs;
+
+  securestate() {
+    print("gelo");
+    secure.value = !secure.value;
+    print(secure.value);
+  }
 
   toPageSignUp() {
-    Get.toNamed(Approutes.signup);
+    Get.offNamed(Approutes.signup);
   }
 
   toPageForgetPassword() {
     Get.toNamed(Approutes.forget);
   }
+
   login() {
     var formestate = globalKey.currentState;
     if (formestate!.validate()) {
-      Get.dialog(Text("Valid"),);
+      Get.dialog(
+        Text("Valid"),
+      );
     } else {
-      Get.dialog(Text("Not valid"),);
+      Get.dialog(
+        Text("Not valid"),
+      );
     }
   }
 

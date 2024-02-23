@@ -16,7 +16,7 @@ class ResetPasswordController extends GetxController {
   toPageSucces() {
     var formestate = globalKey.currentState;
     if (formestate!.validate()) {
-      Get.toNamed(Approutes.succesreset);
+      Get.offNamed(Approutes.succesreset);
     } else {
       Get.dialog(Text("Not valid"),);
     }

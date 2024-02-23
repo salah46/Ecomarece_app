@@ -54,11 +54,10 @@ class SignUp extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Form(
-                key:controllerSignup.globalKey,
+                key: controllerSignup.globalKey,
                 child: Column(
                   children: [
                     CustomeTextField(
-                        
                         valide: (p0) {
                           return validInput(p0!, 10, 100, "username");
                         },
@@ -72,13 +71,12 @@ class SignUp extends StatelessWidget {
                       height: 30,
                     ),
                     CustomeTextField(
-                        
                         valide: (p0) {
                           return validInput(p0!, 10, 100, "phone");
                         },
                         textEditingController:
                             controllerSignup.phoneTextController,
-                        textInputType: TextInputType.emailAddress,
+                        textInputType: TextInputType.phone,
                         icone: Icon(Icons.phone_android_outlined),
                         labeltext: "21".tr,
                         hintText: "22".tr),
@@ -86,7 +84,6 @@ class SignUp extends StatelessWidget {
                       height: 30,
                     ),
                     CustomeTextField(
-                        
                         valide: (p0) {
                           return validInput(p0!, 10, 100, "email");
                         },
@@ -100,7 +97,6 @@ class SignUp extends StatelessWidget {
                       height: 30,
                     ),
                     CustomeTextField(
-                        
                         valide: (p0) {
                           return validInput(p0!, 10, 100, "password");
                         },

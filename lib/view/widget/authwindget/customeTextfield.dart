@@ -8,6 +8,8 @@ class CustomeTextField extends StatelessWidget {
   final TextInputType textInputType;
   final TextEditingController textEditingController;
   final String? Function(String?) valide;
+  final bool? secure;
+  final void Function()? ontapicon;
   const CustomeTextField(
       {super.key,
       required this.icone,
@@ -15,12 +17,15 @@ class CustomeTextField extends StatelessWidget {
       required this.hintText,
       required this.textInputType,
       required this.textEditingController,
-      required this.valide});
+      required this.valide,
+      this.secure,
+      this.ontapicon});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator:(value) => valide(value),
+      obscureText: secure == false || secure == null ? false : true,
+      validator: (value) => valide(value),
       keyboardType: textInputType,
       decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -33,7 +38,7 @@ class CustomeTextField extends StatelessWidget {
           ),
           labelText: labeltext,
           hintText: hintText,
-          suffixIcon: icone,
+          suffixIcon: InkWell(onTap: ontapicon, child: icone),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50),
           )),

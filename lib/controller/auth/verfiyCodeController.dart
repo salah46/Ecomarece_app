@@ -6,7 +6,7 @@ class VerefyController extends GetxController {
   checkverfyCode() {}
 
   toResetPage() {
-    Get.toNamed(Approutes.resetpassword);
+    Get.offNamed(Approutes.resetpassword);
   }
 
   @override

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/localization/transtaltions_Controller.dart';
+import 'package:ecomarce_app_project/core/middleware/middleware.dart';
 import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:ecomarce_app_project/routes.dart';
 import 'package:ecomarce_app_project/view/screen/auth/login.dart';
@@ -50,8 +51,8 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.deepPurple,
       ),
-      home: LangChoose(),
-      routes: routes,
+      getPages: getPages,
+      
     );
   }
 }

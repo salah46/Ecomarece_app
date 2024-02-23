@@ -24,6 +24,6 @@ validInput(String val, int min, int max, String type) {
     return "the field must be less than or equal $max";
   }
   if (val.length < min) {
-    return "the field must be less than or equal $min";
+    return "the field must be great than or equal $min";
   }
 }

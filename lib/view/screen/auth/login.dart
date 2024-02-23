@@ -75,16 +75,20 @@ class Login extends StatelessWidget {
                     SizedBox(
                       height: 30,
                     ),
-                    CustomeTextField(
-                        valide: (p0) {
-                          return validInput(p0!, 10, 100, "password");
-                        },
-                        textEditingController:
-                            controller_login.passwordTextController,
-                        textInputType: TextInputType.visiblePassword,
-                        icone: Icon(Icons.lock_outline_rounded),
-                        labeltext: "19".tr,
-                        hintText: "13".tr),
+                    Obx(() {
+                      return CustomeTextField(
+                          secure: controller_login.secure.value,
+                          ontapicon: () => controller_login.securestate(),
+                          valide: (p0) {
+                            return validInput(p0!, 10, 100, "password");
+                          },
+                          textEditingController:
+                              controller_login.passwordTextController,
+                          textInputType: TextInputType.visiblePassword,
+                          icone: Icon(Icons.lock_outline_rounded),
+                          labeltext: "19".tr,
+                          hintText: "13".tr);
+                    }),
                     SizedBox(
                       height: 25,
                     ),

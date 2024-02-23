@@ -1,13 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecomarce_app_project/controller/auth/skipbuttoncontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/routes.dart';
+import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SkipButton extends StatelessWidget {
-  const SkipButton({super.key});
-
+  SkipButton({super.key});
+  SkipButtonController skipbutoncontroller = Get.put(SkipButtonController());
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +19,7 @@ class SkipButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 0),
           child: MaterialButton(
             onPressed: () {
-              Get.offAllNamed(Approutes.login);
+              skipbutoncontroller.goToPageLogin();
             },
             child: Text(
               "39".tr,

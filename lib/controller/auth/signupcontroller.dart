@@ -15,7 +15,7 @@ class SignUpController extends GetxController {
   signUp() {
     var formestate = globalKey.currentState;
     if (formestate!.validate()) {
-      Get.offNamed(Approutes.checkemail);
+      Get.offNamed(Approutes.verifysignupcode);
     } else {
       Get.dialog(Text("Not valid"),);
     }
@@ -35,12 +35,12 @@ class SignUpController extends GetxController {
     super.onInit();
   }
 
-//   @override
-//   void dispose() {
-//     userTextController.clear();
-//     phoneTextController.clear();
-//     emailSignUpTextController.clear();
-//     passwordSignUpTextController.clear();
-//     super.dispose();
-//   }
+  @override
+  void dispose() {
+    userTextController.clear();
+    phoneTextController.clear();
+    emailSignUpTextController.clear();
+    passwordSignUpTextController.clear();
+    super.dispose();
+  }
 }
