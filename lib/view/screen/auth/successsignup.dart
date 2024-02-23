@@ -7,8 +7,8 @@ import 'package:ecomarce_app_project/view/widget/authwindget/customebodytext.dar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SuccessReset extends StatelessWidget {
-  const SuccessReset({super.key});
+class SuccessSignup extends StatelessWidget {
+  const SuccessSignup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class SuccessReset extends StatelessWidget {
                 height: 20,
               ),
               const CustomeBodyText(
-                  body: "Go Now And Login With The New Password"),
+                  body: "Go Now And Login With Your New Account"),
               const SizedBox(
                 height: 10,
               ),

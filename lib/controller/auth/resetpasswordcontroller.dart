@@ -9,13 +9,10 @@ class ResetPasswordController extends GetxController {
   late TextEditingController repassword;
 
   verifymatch() {}
+  resetpassword() {}
 
   toPageSucces() {
-    // SchedulerBinding.instance.addPostFrameCallback((_) {
-    //   //yourcode
-    // });
-          Get.toNamed(Approutes.succesreset);
-
+    Get.toNamed(Approutes.succesreset);
   }
 
   @override

@@ -11,10 +11,12 @@ class SignUpController extends GetxController {
 
   late TextEditingController passwordSignUpTextController;
 
-  signUp() {}
+  signUp() {
+    Get.offNamed(Approutes.checkemail);
+  }
 
   toLogInPage() {
-  //  Get.toNamed(Approutes.login);
+    //  Get.toNamed(Approutes.login);
   }
 
   @override
@@ -35,4 +37,4 @@ class SignUpController extends GetxController {
 //     passwordSignUpTextController.clear();
 //     super.dispose();
 //   }
- }
+}

@@ -15,7 +15,7 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignUpController controller_signUp = Get.put(SignUpController());
+    SignUpController controllerSignup = Get.put(SignUpController());
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
@@ -56,7 +56,7 @@ class SignUp extends StatelessWidget {
                 children: [
                   CustomeTextField(
                       textEditingController:
-                          controller_signUp.userTextController,
+                          controllerSignup.userTextController,
                       textInputType: TextInputType.text,
                       icone: Icon(Icons.person_outline_outlined),
                       labeltext: "Username",
@@ -66,7 +66,7 @@ class SignUp extends StatelessWidget {
                   ),
                   CustomeTextField(
                       textEditingController:
-                          controller_signUp.phoneTextController,
+                          controllerSignup.phoneTextController,
                       textInputType: TextInputType.emailAddress,
                       icone: Icon(Icons.phone_android_outlined),
                       labeltext: "Phone",
@@ -76,7 +76,7 @@ class SignUp extends StatelessWidget {
                   ),
                   CustomeTextField(
                       textEditingController:
-                          controller_signUp.emailSignUpTextController,
+                          controllerSignup.emailSignUpTextController,
                       textInputType: TextInputType.emailAddress,
                       icone: Icon(Icons.mail_outline_rounded),
                       labeltext: "Email",
@@ -86,7 +86,7 @@ class SignUp extends StatelessWidget {
                   ),
                   CustomeTextField(
                       textEditingController:
-                          controller_signUp.passwordSignUpTextController,
+                          controllerSignup.passwordSignUpTextController,
                       textInputType: TextInputType.visiblePassword,
                       icone: Icon(Icons.lock_outline_rounded),
                       labeltext: "Password",
@@ -99,7 +99,7 @@ class SignUp extends StatelessWidget {
                   ),
                   ContinueBottonWidget(
                     text: "Sign Up",
-                    onpressed: () {},
+                    onpressed: () => controllerSignup.signUp(),
                   ),
                   SizedBox(
                     height: 60,
@@ -111,7 +111,7 @@ class SignUp extends StatelessWidget {
                   CustomeBottom(
                     text1: "Have an account? ",
                     text2: "Sign in",
-                    ontap: controller_signUp.toLogInPage(),
+                    ontap: () => controllerSignup.toLogInPage(),
                   )
                 ],
               ),

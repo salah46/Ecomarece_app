@@ -1,27 +1,23 @@
-// ignore_for_file: must_be_immutable
-
-import 'package:ecomarce_app_project/controller/auth/forgetpasswordcontroller.dart';
-import 'package:ecomarce_app_project/controller/auth/verfiyCodeController.dart';
+import 'package:ecomarce_app_project/controller/auth/checkemailconroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/continuebutton.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customebodytext.dart';
+import 'package:ecomarce_app_project/view/widget/onboardwidget/continuebutton.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
-class VerifyCode extends StatelessWidget {
-  VerifyCode({super.key});
-  VerefyController controllerVerfiCode = Get.put(VerefyController());
-
+class CheckEmail extends StatelessWidget {
+  CheckEmail({super.key});
+  CheckEmailController checkEmailController = Get.put(CheckEmailController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
-        title: Text("Verification Code",
+        title: Text("Check Email",
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
@@ -47,19 +43,21 @@ class VerifyCode extends StatelessWidget {
             ),
             SizedBox(
               height: 300,
-              child: Image.asset(AppImagesConstantes.verify),
+              child: Image.asset(AppImagesConstantes.checkidmail),
             ),
             const SizedBox(
               height: 10,
             ),
             const CustomeTextTitlewidget(
               size: 30,
-              text: ' The Verify Code Sent',
+              text: 'SignUp Success',
             ),
             const SizedBox(
               height: 20,
             ),
-            const CustomeBodyText(body: "Pleease Enter The Verfication Code "),
+            const CustomeBodyText(
+                body:
+                    "Pleease Enter Your E-mail To Recieve \nThe Verfication Code"),
             const SizedBox(
               height: 10,
             ),
@@ -67,23 +65,19 @@ class VerifyCode extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  OtpTextField(
-                    keyboardType: TextInputType.phone,
-                    borderRadius: BorderRadius.circular(100),
-                    enabledBorderColor: const Color.fromRGBO(255, 137, 17, 100),
-                    numberOfFields: 5,
-                    borderColor: const Color(0xFF7F27FF),
-                    fieldWidth: 50,
-                    //set to true to show as box or false to show as dash
-                    showFieldAsBox: true,
-                    //runs when a code is typed in
-                    onCodeChanged: (String code) {
-                      //handle validation or checks here
-                    },
-                    //runs when every textfield is filled
-                    onSubmit: (String verificationCode) {
-                      controllerVerfiCode.toResetPage();
-                    },
+                  CustomeTextField(
+                      icone: Icon(Icons.mail_outline_outlined),
+                      labeltext: "Email",
+                      hintText: "Enter Your Email",
+                      textInputType: TextInputType.emailAddress,
+                      textEditingController:
+                          checkEmailController.checkmailTextController),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  ContinueBottonWidget(
+                    text: "Check",
+                    onpressed: () => checkEmailController.goTosuccessSignup(),
                   ),
                 ],
               ),

@@ -12,4 +12,6 @@ class AppImagesConstantes {
   static String checkmail = "$root/Checkmail.png";
   static String verify = "$root/verify.png";
   static String resetpassword = "$root/resetpassword.png";
+  static String done = "$root/done.png";
+  static String checkidmail = "$root/checkmail.png";
 }
