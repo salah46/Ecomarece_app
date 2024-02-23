@@ -13,12 +13,12 @@ class RememberForgetWidget extends StatelessWidget {
         Row(
           children: [
             Checkbox(value: false, onChanged: (val) {}),
-            Text("Remember me ")
+            Text("42".tr)
           ],
         ),
         InkWell(
-          child: const Text(
-            "Forgot Password",
+          child: Text(
+            "14".tr,
             style: TextStyle(decoration: TextDecoration.underline),
           ),
           onTap: () {

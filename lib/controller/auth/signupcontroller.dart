@@ -11,8 +11,14 @@ class SignUpController extends GetxController {
 
   late TextEditingController passwordSignUpTextController;
 
+  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   signUp() {
-    Get.offNamed(Approutes.checkemail);
+    var formestate = globalKey.currentState;
+    if (formestate!.validate()) {
+      Get.offNamed(Approutes.checkemail);
+    } else {
+      Get.dialog(Text("Not valid"),);
+    }
   }
 
   toLogInPage() {

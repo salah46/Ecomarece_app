@@ -9,4 +9,6 @@ class Approutes {
   static String succesreset = "/succesreset";
   static String checkemail = "/checkemail";
   static String successsignup = "/successsignup";
+  static String verifysignupcode = "/verifysignupcode";
+
 }

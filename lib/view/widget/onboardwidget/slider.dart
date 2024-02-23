@@ -29,12 +29,12 @@ class SliderOnboard extends StatelessWidget {
               SizedBox(
                 height: 25,
               ),
-              Text(onbaordinglist[index].title,
+              Text(onbaordinglist[index].title.tr,
                   style: Theme.of(context).textTheme.headlineMedium),
               SizedBox(
                 height: 30,
               ),
-              Text(onbaordinglist[index].body,
+              Text(onbaordinglist[index].body.tr,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyLarge)
             ],

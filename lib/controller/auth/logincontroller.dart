@@ -6,6 +6,7 @@ class LoginController extends GetxController {
   late TextEditingController emailAddressTextController;
 
   late TextEditingController passwordTextController;
+   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
   toPageSignUp() {
     Get.toNamed(Approutes.signup);
@@ -14,7 +15,14 @@ class LoginController extends GetxController {
   toPageForgetPassword() {
     Get.toNamed(Approutes.forget);
   }
-  login() {}
+  login() {
+    var formestate = globalKey.currentState;
+    if (formestate!.validate()) {
+      Get.dialog(Text("Valid"),);
+    } else {
+      Get.dialog(Text("Not valid"),);
+    }
+  }
 
   @override
   void onInit() {

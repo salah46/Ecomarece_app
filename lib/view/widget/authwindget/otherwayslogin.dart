@@ -2,6 +2,7 @@ import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:flutter/material.dart';
 
 class OtherWaySignIn extends StatelessWidget {
+  
   const OtherWaySignIn({super.key});
 
   @override

@@ -5,8 +5,17 @@ import 'package:get/get.dart';
 class ForgetPasswordContrller extends GetxController {
   late TextEditingController emailforgetTextContrller;
 
+  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
   toVerifyCodePage() {
-    Get.toNamed(Approutes.verifycode);
+    var formestate = globalKey.currentState;
+    if (formestate!.validate()) {
+      Get.toNamed(Approutes.verifycode);
+    } else {
+      Get.dialog(
+        Text("Not valid"),
+      );
+    }
   }
 
   toForgetPasswordPage() {

@@ -29,15 +29,14 @@ class SuccessSignup extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const CustomeTextTitlewidget(
+              CustomeTextTitlewidget(
                 size: 30,
-                text: 'Done',
+                text: "37".tr,
               ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomeBodyText(
-                  body: "Go Now And Login With Your New Account"),
+              CustomeBodyText(body: "38".tr),
               const SizedBox(
                 height: 10,
               ),
@@ -46,7 +45,7 @@ class SuccessSignup extends StatelessWidget {
                 child: Column(
                   children: [
                     ContinueBottonWidget(
-                        text: "Login",
+                        text: "31".tr,
                         onpressed: () => Get.offAllNamed(Approutes.login))
                   ],
                 ),

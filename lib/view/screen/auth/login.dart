@@ -2,6 +2,7 @@
 
 import 'package:ecomarce_app_project/controller/auth/logincontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
+import 'package:ecomarce_app_project/core/functions/validinput.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeBottom.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
@@ -22,7 +23,7 @@ class Login extends StatelessWidget {
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
-        title: Text("Sign In",
+        title: Text("9".tr,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
@@ -45,66 +46,75 @@ class Login extends StatelessWidget {
           children: [
             Logo(),
             CustomeTextTitlewidget(
-              text: 'Welcome Back',
+              text: '10'.tr,
               size: 30,
             ),
             const SizedBox(
               height: 10,
             ),
-            const CustomeBodyText(
-                body:
-                    "Sign in with your email and password or\n continue with social media"),
+            CustomeBodyText(body: "11".tr),
             const SizedBox(
               height: 30,
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  CustomeTextField(
-                      textEditingController:
-                          controller_login.emailAddressTextController,
-                      textInputType: TextInputType.emailAddress,
-                      icone: Icon(Icons.mail_outline_rounded),
-                      labeltext: "Email",
-                      hintText: "Enter Your Email"),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CustomeTextField(
-                      textEditingController:
-                          controller_login.passwordTextController,
-                      textInputType: TextInputType.visiblePassword,
-                      icone: Icon(Icons.lock_outline_rounded),
-                      labeltext: "Password",
-                      hintText: "Enter Your Password"),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  RememberForgetWidget(),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  ContinueBottonWidget(
-                    text: "Sign In",
-                    onpressed: () {},
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  OtherWaySignIn(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomeBottom(
-                    text1: "Don't have an account? ",
-                    text2: "Sign Up",
-                    ontap: () {
-                      controller_login.toPageSignUp();
-                      //print('go to signup');
-                    },
-                  )
-                ],
+              child: Form(
+                key: controller_login.globalKey,
+                child: Column(
+                  children: [
+                    CustomeTextField(
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "email");
+                        },
+                        textEditingController:
+                            controller_login.emailAddressTextController,
+                        textInputType: TextInputType.emailAddress,
+                        icone: Icon(Icons.mail_outline_rounded),
+                        labeltext: "18".tr,
+                        hintText: "12".tr),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    CustomeTextField(
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "password");
+                        },
+                        textEditingController:
+                            controller_login.passwordTextController,
+                        textInputType: TextInputType.visiblePassword,
+                        icone: Icon(Icons.lock_outline_rounded),
+                        labeltext: "19".tr,
+                        hintText: "13".tr),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    RememberForgetWidget(),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    ContinueBottonWidget(
+                      text: "9".tr,
+                      onpressed: () {
+                        controller_login.login();
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    OtherWaySignIn(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomeBottom(
+                      text1: "16".tr,
+                      text2: "17".tr,
+                      ontap: () {
+                        controller_login.toPageSignUp();
+                        //print('go to signup');
+                      },
+                    )
+                  ],
+                ),
               ),
             ),
           ],

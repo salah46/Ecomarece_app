@@ -8,11 +8,19 @@ class ResetPasswordController extends GetxController {
 
   late TextEditingController repassword;
 
+   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
   verifymatch() {}
   resetpassword() {}
 
   toPageSucces() {
-    Get.toNamed(Approutes.succesreset);
+    var formestate = globalKey.currentState;
+    if (formestate!.validate()) {
+      Get.toNamed(Approutes.succesreset);
+    } else {
+      Get.dialog(Text("Not valid"),);
+    }
+    
   }
 
   @override

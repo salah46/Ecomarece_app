@@ -2,6 +2,7 @@
 
 import 'package:ecomarce_app_project/controller/auth/signupcontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
+import 'package:ecomarce_app_project/core/functions/validinput.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeBottom.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
@@ -19,7 +20,7 @@ class SignUp extends StatelessWidget {
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
-        title: Text("Sign Up",
+        title: Text("17".tr,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
@@ -45,75 +46,94 @@ class SignUp extends StatelessWidget {
             ),
             CustomeTextTitlewidget(
               size: 30,
-              text: 'Let\'s Create Your Account ',
+              text: "46".tr,
             ),
             const SizedBox(
-              height: 50,
+              height: 40,
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  CustomeTextField(
-                      textEditingController:
-                          controllerSignup.userTextController,
-                      textInputType: TextInputType.text,
-                      icone: Icon(Icons.person_outline_outlined),
-                      labeltext: "Username",
-                      hintText: "Enter Your Username"),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CustomeTextField(
-                      textEditingController:
-                          controllerSignup.phoneTextController,
-                      textInputType: TextInputType.emailAddress,
-                      icone: Icon(Icons.phone_android_outlined),
-                      labeltext: "Phone",
-                      hintText: "Enter Your Phone Number"),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CustomeTextField(
-                      textEditingController:
-                          controllerSignup.emailSignUpTextController,
-                      textInputType: TextInputType.emailAddress,
-                      icone: Icon(Icons.mail_outline_rounded),
-                      labeltext: "Email",
-                      hintText: "Enter Your Email"),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CustomeTextField(
-                      textEditingController:
-                          controllerSignup.passwordSignUpTextController,
-                      textInputType: TextInputType.visiblePassword,
-                      icone: Icon(Icons.lock_outline_rounded),
-                      labeltext: "Password",
-                      hintText: "Enter Your Password"),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  SizedBox(
-                    height: 45,
-                  ),
-                  ContinueBottonWidget(
-                    text: "Sign Up",
-                    onpressed: () => controllerSignup.signUp(),
-                  ),
-                  SizedBox(
-                    height: 60,
-                  ),
-                  OtherWaySignIn(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomeBottom(
-                    text1: "Have an account? ",
-                    text2: "Sign in",
-                    ontap: () => controllerSignup.toLogInPage(),
-                  )
-                ],
+              child: Form(
+                key:controllerSignup.globalKey,
+                child: Column(
+                  children: [
+                    CustomeTextField(
+                        
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "username");
+                        },
+                        textEditingController:
+                            controllerSignup.userTextController,
+                        textInputType: TextInputType.text,
+                        icone: Icon(Icons.person_outline_outlined),
+                        labeltext: "20".tr,
+                        hintText: "23".tr),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    CustomeTextField(
+                        
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "phone");
+                        },
+                        textEditingController:
+                            controllerSignup.phoneTextController,
+                        textInputType: TextInputType.emailAddress,
+                        icone: Icon(Icons.phone_android_outlined),
+                        labeltext: "21".tr,
+                        hintText: "22".tr),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    CustomeTextField(
+                        
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "email");
+                        },
+                        textEditingController:
+                            controllerSignup.emailSignUpTextController,
+                        textInputType: TextInputType.emailAddress,
+                        icone: Icon(Icons.mail_outline_rounded),
+                        labeltext: "18".tr,
+                        hintText: "12".tr),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    CustomeTextField(
+                        
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "password");
+                        },
+                        textEditingController:
+                            controllerSignup.passwordSignUpTextController,
+                        textInputType: TextInputType.visiblePassword,
+                        icone: Icon(Icons.lock_outline_rounded),
+                        labeltext: "19".tr,
+                        hintText: "13".tr),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    SizedBox(
+                      height: 45,
+                    ),
+                    ContinueBottonWidget(
+                      text: "17".tr,
+                      onpressed: () => controllerSignup.signUp(),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    OtherWaySignIn(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomeBottom(
+                      text1: "25".tr,
+                      text2: "26".tr,
+                      ontap: () => controllerSignup.toLogInPage(),
+                    )
+                  ],
+                ),
               ),
             ),
           ],

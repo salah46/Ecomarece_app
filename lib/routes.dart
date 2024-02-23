@@ -6,6 +6,7 @@ import 'package:ecomarce_app_project/view/screen/auth/checkemail.dart';
 import 'package:ecomarce_app_project/view/screen/auth/resetpassword.dart';
 import 'package:ecomarce_app_project/view/screen/auth/signup.dart';
 import 'package:ecomarce_app_project/view/screen/auth/successreset.dart';
+import 'package:ecomarce_app_project/view/screen/auth/verfiysignupcode.dart';
 import 'package:ecomarce_app_project/view/screen/auth/verifycode.dart';
 import 'package:ecomarce_app_project/view/screen/langchoose.dart';
 import 'package:ecomarce_app_project/view/screen/auth/login.dart';
@@ -25,4 +26,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   Approutes.succesreset :(p0) => SuccessReset(),
   Approutes.checkemail :(p0) => CheckEmail(),
   Approutes.successsignup :(p0) => SuccessSignup(),
+  Approutes.verifysignupcode :(p0) => VerifySignupCode()
 };

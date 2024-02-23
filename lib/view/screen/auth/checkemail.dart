@@ -1,6 +1,7 @@
 import 'package:ecomarce_app_project/controller/auth/checkemailconroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
+import 'package:ecomarce_app_project/core/functions/validinput.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/continuebutton.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
@@ -17,7 +18,7 @@ class CheckEmail extends StatelessWidget {
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
-        title: Text("Check Email",
+        title: Text("27".tr,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
@@ -48,38 +49,42 @@ class CheckEmail extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const CustomeTextTitlewidget(
-              size: 30,
-              text: 'SignUp Success',
+            CustomeTextTitlewidget(
+              size: 28,
+              text: '28'.tr,
             ),
             const SizedBox(
               height: 20,
             ),
-            const CustomeBodyText(
-                body:
-                    "Pleease Enter Your E-mail To Recieve \nThe Verfication Code"),
+            CustomeBodyText(body: "29".tr),
             const SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  CustomeTextField(
-                      icone: Icon(Icons.mail_outline_outlined),
-                      labeltext: "Email",
-                      hintText: "Enter Your Email",
-                      textInputType: TextInputType.emailAddress,
-                      textEditingController:
-                          checkEmailController.checkmailTextController),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  ContinueBottonWidget(
-                    text: "Check",
-                    onpressed: () => checkEmailController.goTosuccessSignup(),
-                  ),
-                ],
+              child: Form(
+                key: checkEmailController.globalKey,
+                child: Column(
+                  children: [
+                    CustomeTextField(
+                       valide: (p0) {
+                            return validInput(p0!, 10, 100, "password");
+                          },
+                        icone: Icon(Icons.mail_outline_outlined),
+                        labeltext: "18".tr,
+                        hintText: "12".tr,
+                        textInputType: TextInputType.emailAddress,
+                        textEditingController:
+                            checkEmailController.checkmailTextController),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    ContinueBottonWidget(
+                      text: "30".tr,
+                      onpressed: () => checkEmailController.goToVerifySignup(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

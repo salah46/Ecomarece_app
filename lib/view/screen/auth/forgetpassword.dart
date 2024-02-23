@@ -4,6 +4,7 @@ import 'package:ecomarce_app_project/controller/auth/forgetpasswordcontroller.da
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/core/constant/routes.dart';
+import 'package:ecomarce_app_project/core/functions/validinput.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/continuebutton.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
@@ -21,7 +22,7 @@ class ForgetPassword extends StatelessWidget {
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
-        title: Text("Password Recovery",
+        title: Text("45".tr,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
@@ -52,38 +53,44 @@ class ForgetPassword extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const CustomeTextTitlewidget(
+            CustomeTextTitlewidget(
               size: 30,
-              text: 'Forget Password',
+              text: '14'.tr,
             ),
             const SizedBox(
               height: 20,
             ),
-            const CustomeBodyText(
-                body:
-                    "Pleease Enter Your Email To Recieve\n a Verfication Code "),
+            CustomeBodyText(body: "29".tr),
             const SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  CustomeTextField(
-                      textEditingController:
-                          controllerForgetpassword.emailforgetTextContrller,
-                      textInputType: TextInputType.emailAddress,
-                      icone: const Icon(Icons.mail_outline_outlined),
-                      labeltext: "Email",
-                      hintText: "Enter Your Email"),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  ContinueBottonWidget(
-                    text: "Send",
-                    onpressed: () => controllerForgetpassword.toVerifyCodePage(),
-                  ),
-                ],
+              child: Form(
+                key: controllerForgetpassword.globalKey,
+                child: Column(
+                  children: [
+                    CustomeTextField(
+                       valide: (p0) {
+                            return validInput(p0!, 10, 100, "password");
+                          },
+                          
+                        textEditingController:
+                            controllerForgetpassword.emailforgetTextContrller,
+                        textInputType: TextInputType.emailAddress,
+                        icone: const Icon(Icons.mail_outline_outlined),
+                        labeltext: "18".tr,
+                        hintText: "12".tr),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    ContinueBottonWidget(
+                      text: "44".tr,
+                      onpressed: () =>
+                          controllerForgetpassword.toVerifyCodePage(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

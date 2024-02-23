@@ -1,6 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:ecomarce_app_project/controller/auth/resetpasswordcontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
+import 'package:ecomarce_app_project/core/functions/validinput.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/continuebutton.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
@@ -17,7 +20,7 @@ class ResetPassword extends StatelessWidget {
     return Scaffold(
       backgroundColor: Appcolor.white,
       appBar: AppBar(
-        title: Text("Reset Code",
+        title: Text("48".tr,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
@@ -48,45 +51,56 @@ class ResetPassword extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const CustomeTextTitlewidget(
+            CustomeTextTitlewidget(
               size: 30,
-              text: 'Enter the new password',
+              text: '34'.tr,
             ),
             const SizedBox(
               height: 20,
             ),
-            const CustomeBodyText(body: "Pleease Enter The New Password Code "),
+            CustomeBodyText(body: "34".tr),
             const SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  CustomeTextField(
-                      icone: const Icon(Icons.lock_outline_rounded),
-                      labeltext: "Password",
-                      hintText: "Enter The Password",
-                      textInputType: TextInputType.visiblePassword,
-                      textEditingController: resetPasswordController.password),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  CustomeTextField(
-                      icone: const Icon(Icons.lock_outline_rounded),
-                      labeltext: "Password",
-                      hintText: "Confirm The Password",
-                      textInputType: TextInputType.visiblePassword,
-                      textEditingController: resetPasswordController.password),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  ContinueBottonWidget(
-                      text: "Save",
-                      onpressed: () {
-                        resetPasswordController.toPageSucces();
-                      })
-                ],
+              child: Form(
+                key: resetPasswordController.globalKey,
+                child: Column(
+                  children: [
+                    CustomeTextField(
+                      valide: (p0) {
+                            return validInput(p0!, 10, 100, "password");
+                          },
+                          
+                        icone: const Icon(Icons.lock_outline_rounded),
+                        labeltext: "19".tr,
+                        hintText: "13".tr,
+                        textInputType: TextInputType.visiblePassword,
+                        textEditingController: resetPasswordController.password),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    CustomeTextField(
+                       valide: (p0) {
+                            return validInput(p0!, 10, 100, "password");
+                          },
+                          
+                        icone: const Icon(Icons.lock_outline_rounded),
+                        labeltext: "35".tr,
+                        hintText: "47".tr,
+                        textInputType: TextInputType.visiblePassword,
+                        textEditingController: resetPasswordController.password),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    ContinueBottonWidget(
+                        text: "33".tr,
+                        onpressed: () {
+                          resetPasswordController.toPageSucces();
+                        })
+                  ],
+                ),
               ),
             ),
           ],

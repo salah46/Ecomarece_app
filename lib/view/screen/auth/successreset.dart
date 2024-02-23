@@ -29,15 +29,15 @@ class SuccessReset extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const CustomeTextTitlewidget(
+               CustomeTextTitlewidget(
                 size: 30,
-                text: 'Done',
+                text: '32'.tr,
               ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomeBodyText(
-                  body: "Go Now And Login With The New Password"),
+               CustomeBodyText(
+                  body: "36".tr),
               const SizedBox(
                 height: 10,
               ),
@@ -46,7 +46,7 @@ class SuccessReset extends StatelessWidget {
                 child: Column(
                   children: [
                     ContinueBottonWidget(
-                        text: "Login",
+                        text: "31".tr,
                         onpressed: () => Get.offAllNamed(Approutes.login))
                   ],
                 ),

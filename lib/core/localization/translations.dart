@@ -1,10 +1,9 @@
-
 import 'package:get/get.dart';
 
-class AppLanguages implements Translations{
+class AppLanguages implements Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-     "ar": {
+        "ar": {
           "1": "اختر اللغة",
           "2": "اختر المنتج",
           "3": "نحن لدينا 100 الف منتج  , اختر \n  منتجك  من  متجرنا",
@@ -19,9 +18,9 @@ class AppLanguages implements Translations{
               "يمكنك تسجيل الدخول من خلال البريد وكلمة المرور او من خلال وسائل التواصل الاجتماعي",
           "12": "ادخل البريد الالكتروني",
           "13": "ادخل كلمة المرور",
-          "14": "هل نسيت كلمة المرور",
+          "14": "هل نسيت كلمة المرور؟",
           "15": "تسجيل الدخول",
-          "16": "ليس لديك حساب ? ",
+          "16": "ليس لديك حساب? ",
           "17": "انشاء حساب",
           "18": "البريد الالكتروني",
           "19": "كلمة المرور",
@@ -30,8 +29,8 @@ class AppLanguages implements Translations{
           "22": "ادخل رقم الهاتف",
           "23": "ادخل اسم المستخدم",
           "24":
-              "انشاء حساب من خلال البريد وكلمة المرور او من خلال وسائل التواصل الاجتماعي",
-          "25": " لديك حساب ? ",
+              "انشاء حساب من خلال البريد وكلمة المرور \nاو من خلال وسائل التواصل الاجتماعي",
+          "25": " لديك حساب ؟ ",
           "26": "تسجيل الدخول",
           "27": "فحص البريد الالكتروني",
           "28": "تم انشاء الحساب بنجاح",
@@ -44,7 +43,19 @@ class AppLanguages implements Translations{
           "35": "الكلمة الجديدة",
           "36": "تم اعادة تعيين كلمة المرور بنجاح",
           "37": "تهانينا",
-          "38": "تم التسجيل بنجاح"
+          "38": "تم التسجيل بنجاح",
+          "39": "تجاوز",
+          "40": "توصيل سريع",
+          "41": "تسليم موثوق وسريع. نحن نقوم بتسليم \nمنتجك بأسرع طريقة ممكنة",
+          "42": "تذكرني",
+          "43": "نمت العملية بنجاح",
+          "44": "ارسل",
+          "45": "استرجاع كلمة المرور",
+          "46": "دعنا ننشأ حسابك",
+          "47": "تأكيد كلمة المرور",
+          "48": "إعادة التعيين",
+          "49": "تم إرسال كود التأكيد",
+          "50": "الرجاء إدخال كود التأكيد "
         },
         "en": {
           "1": "Choose Language",
@@ -60,7 +71,7 @@ class AppLanguages implements Translations{
           "9": "Sign In",
           "10": "Welcome Back",
           "11":
-              "Sign In Your Email And Password Or  Continue With Social Media",
+              "Sign in with your email and password or\n continue with social media",
           "12": "Enter Your Email",
           "13": "Enter Your Password",
           "14": "Forget Password",
@@ -76,20 +87,33 @@ class AppLanguages implements Translations{
           "24":
               "Sign Up With Your Email And Password OR Continue With Social Media",
           "25": " have an account ? ",
-          "26": "SignIn",
+          "26": "Sign In",
           "27": "Check Email",
           "28": "Account successfully created",
-          "29": "please Enter Your Email Address To Recive A verification code",
-          "30": "check",
+          "29":
+              "please Enter Your Email Address To \n Recive A verification code",
+          "30": "Check",
           "31": "Go To Login",
           "32": "Success",
-          "33": "save",
+          "33": "Save",
           "34": "Please Enter new Password",
           "35": "New Password",
           "36": "Password has been reset successfully",
           "37": "congratulations",
-          "38": "successfully registered"
+          "38": "Successfully registered",
+          "39": "Skip",
+          "40": "Fast Delivery",
+          "41":
+              "Reliable And Fast Delivery. We\nDeliver your proudct the fastest\nway possible",
+          "42": "Remeber me",
+          "43": "Sign Up Succes",
+          "44": "Send",
+          "45": "Password Recovery",
+          "46": 'Let\'s Create Your Account ',
+          "47": "Confirm Password",
+          "48": "Reset Code",
+          "49": "The Verify Code Sent",
+          "50": "Pleease Enter The Verfication Code"
         }
-  };
-
+      };
 }

@@ -2,6 +2,7 @@
 
 import 'package:ecomarce_app_project/controller/auth/forgetpasswordcontroller.dart';
 import 'package:ecomarce_app_project/controller/auth/verfiyCodeController.dart';
+import 'package:ecomarce_app_project/controller/auth/verfiysignupcodecontroller.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/continuebutton.dart';
@@ -12,9 +13,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
-class VerifyCode extends StatelessWidget {
-  VerifyCode({super.key});
-  VerefyController controllerVerfiCode = Get.put(VerefyController());
+class VerifySignupCode extends StatelessWidget {
+  VerifySignupCode({super.key});
+  VerefySignUpCodeController contrllerVerifySignUpCode = Get.put(VerefySignUpCodeController());
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,7 @@ class VerifyCode extends StatelessWidget {
                     },
                     //runs when every textfield is filled
                     onSubmit: (String verificationCode) {
-                      controllerVerfiCode.toResetPage();
+                      contrllerVerifySignUpCode.toSuccessSignUpPage();
                     },
                   ),
                 ],

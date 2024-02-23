@@ -7,16 +7,20 @@ class CustomeTextField extends StatelessWidget {
   final String hintText;
   final TextInputType textInputType;
   final TextEditingController textEditingController;
+  final String? Function(String?) valide;
   const CustomeTextField(
       {super.key,
       required this.icone,
       required this.labeltext,
       required this.hintText,
-      required this.textInputType, required this.textEditingController});
+      required this.textInputType,
+      required this.textEditingController,
+      required this.valide});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator:(value) => valide(value),
       keyboardType: textInputType,
       decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,

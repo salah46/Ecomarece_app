@@ -6,10 +6,19 @@ import 'package:get/get.dart';
 class CheckEmailController extends GetxController {
   late TextEditingController checkmailTextController;
 
+    GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
+
   checkEmail() {}
 
-  goTosuccessSignup() {
-    Get.offAllNamed(Approutes.successsignup);
+  goToVerifySignup() {
+    var formestate = globalKey.currentState;
+    if (formestate!.validate()) {
+      Get.offAllNamed(Approutes.verifysignupcode);
+    } else {
+      Get.dialog(Text("Not valid"),);
+    }
+    
   }
 
   @override
