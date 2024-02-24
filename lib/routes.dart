@@ -2,6 +2,7 @@
 
 import 'package:ecomarce_app_project/core/constant/routes.dart';
 import 'package:ecomarce_app_project/core/middleware/middleware.dart';
+import 'package:ecomarce_app_project/testview.dart';
 import 'package:ecomarce_app_project/view/screen/Onboarding.dart';
 import 'package:ecomarce_app_project/view/screen/auth/resetpassword.dart';
 import 'package:ecomarce_app_project/view/screen/auth/signup.dart';
@@ -17,7 +18,8 @@ import 'view/screen/auth/forgetpassword.dart';
 import 'view/screen/auth/successsignup.dart';
 
 List<GetPage<dynamic>>? getPages = [
-  GetPage(name: "/", page: () => LangChoose(), middlewares: [MiddleWare()]),
+  GetPage(name: "/", page: () => TestView()),
+  //GetPage(name: "/", page: () => LangChoose(), middlewares: [MiddleWare()]),
   GetPage(name: Approutes.login, page: () => Login()),
   GetPage(name: Approutes.onboarding, page: () => Onboarding()),
   GetPage(name: Approutes.signup, page: () => SignUp()),
