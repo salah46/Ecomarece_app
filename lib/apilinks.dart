@@ -5,4 +5,6 @@ class Applinks {
   //authpage
   static const String signup = "$server/auth/signup.php";
   static const String verify = "$server/auth/verify.php";
+  static const String login = "$server/auth/login.php";
+
 }

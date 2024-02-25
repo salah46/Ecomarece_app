@@ -80,7 +80,7 @@ class Login extends StatelessWidget {
                           secure: controller_login.secure.value,
                           ontapicon: () => controller_login.securestate(),
                           valide: (p0) {
-                            return validInput(p0!, 10, 100, "password");
+                            return validInput(p0!, 8, 100, "password");
                           },
                           textEditingController:
                               controller_login.passwordTextController,
