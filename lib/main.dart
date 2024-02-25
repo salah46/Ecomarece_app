@@ -6,6 +6,7 @@ import 'package:ecomarce_app_project/core/middleware/middleware.dart';
 import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:ecomarce_app_project/routes.dart';
 import 'package:ecomarce_app_project/view/screen/auth/login.dart';
+import 'package:ecomarce_app_project/view/screen/auth/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -54,7 +55,6 @@ class MyApp extends StatelessWidget {
       ),
       getPages: getPages,
       initialBinding: InitialBinding(),
-      
     );
   }
 }

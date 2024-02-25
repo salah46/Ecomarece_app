@@ -83,7 +83,7 @@ class VerifySignupCode extends StatelessWidget {
                     },
                     //runs when every textfield is filled
                     onSubmit: (String verificationCode) {
-                      contrllerVerifySignUpCode.toSuccessSignUpPage();
+                      contrllerVerifySignUpCode.toSuccessSignUpPage(verificationCode);
                     },
                   ),
                 ],

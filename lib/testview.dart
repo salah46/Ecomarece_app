@@ -1,4 +1,5 @@
 import 'package:ecomarce_app_project/controller/auth/test_controller.dart';
+import 'package:ecomarce_app_project/core/class/handlingdataview.dart';
 import 'package:ecomarce_app_project/core/class/statusrequest.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,18 +15,14 @@ class TestView extends StatelessWidget {
         title: Text("data View"),
       ),
       body: GetBuilder<TestContrller>(builder: (controller) {
-        if (testContrller.statusResquest == StatusResquest.laoding) {
-          return Center(child: Text("Loading"));
-        } else if (testContrller.statusResquest == StatusResquest.failure) {
-          return Center(child: Text("Failure"));
-        } else {
-          return ListView.builder(
-            itemCount: 1,
-            itemBuilder: (context, index) {
-              return Text("${testContrller.data}");
-            },
-          );
-        }
+        return HandlingDataView(
+            statusResquest: testContrller.statusResquest,
+            widget: ListView.builder(
+              itemCount: 1,
+              itemBuilder: (context, index) {
+                return Text("${testContrller.data}");
+              },
+            ));
       }),
     );
   }

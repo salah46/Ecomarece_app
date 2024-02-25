@@ -26,6 +26,7 @@ class CustomeTextField extends StatelessWidget {
     return TextFormField(
       obscureText: secure == false || secure == null ? false : true,
       validator: (value) => valide(value),
+      controller: textEditingController,
       keyboardType: textInputType,
       decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,

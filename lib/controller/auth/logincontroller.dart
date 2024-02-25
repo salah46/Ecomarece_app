@@ -26,9 +26,6 @@ class LoginController extends GetxController {
   login() {
     var formestate = globalKey.currentState;
     if (formestate!.validate()) {
-      Get.dialog(
-        Text("Valid"),
-      );
     } else {
       Get.dialog(
         Text("Not valid"),
