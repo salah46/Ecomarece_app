@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 
 class LoginController extends GetxController {
   late TextEditingController emailAddressTextController;
-
   late TextEditingController passwordTextController;
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   RxBool secure = false.obs;

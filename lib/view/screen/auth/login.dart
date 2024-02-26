@@ -80,12 +80,14 @@ class Login extends StatelessWidget {
                           secure: controller_login.secure.value,
                           ontapicon: () => controller_login.securestate(),
                           valide: (p0) {
-                            return validInput(p0!, 8, 100, "password");
+                            return validInput(p0!, 4, 100, "password");
                           },
                           textEditingController:
                               controller_login.passwordTextController,
                           textInputType: TextInputType.visiblePassword,
-                          icone: Icon(Icons.lock_outline_rounded),
+                          icone: controller_login.secure.value == false
+                              ? Icon(Icons.lock_open_outlined)
+                              : Icon(Icons.lock_outline_rounded),
                           labeltext: "19".tr,
                           hintText: "13".tr);
                     }),
