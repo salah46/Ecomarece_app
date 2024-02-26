@@ -72,7 +72,7 @@ class ForgetPassword extends StatelessWidget {
                   children: [
                     CustomeTextField(
                        valide: (p0) {
-                            return validInput(p0!, 10, 100, "password");
+                            return validInput(p0!, 10, 100, "email");
                           },
                           
                         textEditingController:

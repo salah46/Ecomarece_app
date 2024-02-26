@@ -1,5 +1,6 @@
 class AppImagesConstantes {
   static String root = "assets/images";
+  static String lottieroot = "assets/lotties";
   static String onbaordingimage1 = "$root/Onboard1.png";
   static String onbaordingimage2 = "$root/Onboard2.png";
   static String onbaordingimage3 = "$root/Onboard3.png";
@@ -14,4 +15,5 @@ class AppImagesConstantes {
   static String resetpassword = "$root/resetpassword.png";
   static String done = "$root/done.png";
   static String checkidmail = "$root/checkmail.png";
+  static String loading = "$lottieroot/loading.json";
 }

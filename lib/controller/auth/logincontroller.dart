@@ -1,9 +1,11 @@
 import 'package:ecomarce_app_project/core/class/statusrequest.dart';
+import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/core/constant/routes.dart';
 import 'package:ecomarce_app_project/core/functions/handlingdata.dart';
 import 'package:ecomarce_app_project/data/datasource/remote/logindata.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginController extends GetxController {
   late TextEditingController emailAddressTextController;
@@ -33,8 +35,8 @@ class LoginController extends GetxController {
     var formestate = globalKey.currentState;
     if (formestate!.validate()) {
       statusResquest = StatusResquest.laoding;
+
       update();
-      print("================**" + statusResquest.toString());
       print(emailAddressTextController.value.text);
       var responce = await loginData.postData(
         emailAddressTextController.text,
@@ -42,10 +44,10 @@ class LoginController extends GetxController {
       );
 
       statusResquest = handlingData(responce);
-      print(statusResquest.toString());
+      //print(statusResquest.toString());
       if (StatusResquest.success == statusResquest) {
         if (responce['status'] == "success") {
-          Get.defaultDialog(middleText: "APPROVED");
+          Get.offAllNamed(Approutes.homepage);
         } else {
           Get.defaultDialog(
               title: "Error", middleText: "Invalid Email or Password");
@@ -54,11 +56,7 @@ class LoginController extends GetxController {
         Get.defaultDialog(middleText: statusResquest.toString());
       }
       update();
-    } else {
-      Get.dialog(
-        Text("Not valid"),
-      );
-    }
+    } else {}
   }
 
   @override

@@ -69,28 +69,28 @@ class ResetPassword extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomeTextField(
-                      valide: (p0) {
-                            return validInput(p0!, 10, 100, "password");
-                          },
-                          
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "password");
+                        },
                         icone: const Icon(Icons.lock_outline_rounded),
                         labeltext: "19".tr,
                         hintText: "13".tr,
                         textInputType: TextInputType.visiblePassword,
-                        textEditingController: resetPasswordController.password),
+                        textEditingController:
+                            resetPasswordController.password),
                     const SizedBox(
                       height: 25,
                     ),
                     CustomeTextField(
-                       valide: (p0) {
-                            return validInput(p0!, 10, 100, "password");
-                          },
-                          
+                        valide: (p0) {
+                          return validInput(p0!, 10, 100, "password");
+                        },
                         icone: const Icon(Icons.lock_outline_rounded),
                         labeltext: "35".tr,
                         hintText: "47".tr,
                         textInputType: TextInputType.visiblePassword,
-                        textEditingController: resetPasswordController.password),
+                        textEditingController:
+                            resetPasswordController.repassword),
                     const SizedBox(
                       height: 25,
                     ),

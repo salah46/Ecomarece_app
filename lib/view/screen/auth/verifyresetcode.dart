@@ -1,19 +1,16 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:ecomarce_app_project/controller/auth/forgetpasswordcontroller.dart';
 import 'package:ecomarce_app_project/controller/auth/verfiyCodeController.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
-import 'package:ecomarce_app_project/view/widget/authwindget/continuebutton.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
-import 'package:ecomarce_app_project/view/widget/authwindget/customeTextfield.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customebodytext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
-class VerifyCode extends StatelessWidget {
-  VerifyCode({super.key});
+class VerifyResetCode extends StatelessWidget {
+  VerifyResetCode({super.key});
   VerefyController controllerVerfiCode = Get.put(VerefyController());
 
   @override
@@ -52,14 +49,14 @@ class VerifyCode extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-             CustomeTextTitlewidget(
+            CustomeTextTitlewidget(
               size: 30,
               text: '49'.tr,
             ),
             const SizedBox(
               height: 20,
             ),
-             CustomeBodyText(body: "50".tr),
+            CustomeBodyText(body: "50".tr),
             const SizedBox(
               height: 10,
             ),
@@ -82,7 +79,7 @@ class VerifyCode extends StatelessWidget {
                     },
                     //runs when every textfield is filled
                     onSubmit: (String verificationCode) {
-                      controllerVerfiCode.toResetPage();
+                      controllerVerfiCode.toResetPage(verificationCode);
                     },
                   ),
                 ],

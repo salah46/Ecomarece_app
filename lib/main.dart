@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 
 import 'core/localization/translations.dart';
 import 'view/screen/auth/forgetpassword.dart';
-import 'view/screen/auth/verifycode.dart';
+import 'view/screen/auth/verifyresetcode.dart';
 import 'view/screen/langchoose.dart';
 
 main() async {
