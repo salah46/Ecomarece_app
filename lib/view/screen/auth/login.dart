@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecomarce_app_project/controller/auth/logincontroller.dart';
+import 'package:ecomarce_app_project/core/class/handlingdataview.dart';
 import 'package:ecomarce_app_project/core/class/statusrequest.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
@@ -16,11 +17,13 @@ import 'package:ecomarce_app_project/view/widget/authwindget/rememberforgetwidge
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
 class Login extends StatelessWidget {
   Login({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(LoginController());
+    String? currentRouteName = ModalRoute.of(context)!.settings.name;
 
     return Scaffold(
       backgroundColor: Appcolor.white,
@@ -44,96 +47,94 @@ class Login extends StatelessWidget {
         ),
       ),
       body: GetBuilder<LoginController>(builder: (controllerLogin) {
-        return controllerLogin.statusResquest == StatusResquest.laoding
-            ? Center(
-                child: Lottie.asset(AppImagesConstantes.loading),
-              )
-            : SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Logo(),
-                    CustomeTextTitlewidget(
-                      text: '10'.tr,
-                      size: 30,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    CustomeBodyText(body: "11".tr),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Form(
-                        key: controllerLogin.globalKey,
-                        child: Column(
-                          children: [
-                            CustomeTextField(
-                                valide: (p0) {
-                                  return validInput(p0!, 10, 100, "email");
-                                },
-                                textEditingController:
-                                    controllerLogin.emailAddressTextController,
-                                textInputType: TextInputType.emailAddress,
-                                icone: Icon(Icons.mail_outline_rounded),
-                                labeltext: "18".tr,
-                                hintText: "12".tr),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Obx(() {
-                              return CustomeTextField(
-                                  secure: controllerLogin.secure.value,
-                                  ontapicon: () =>
-                                      controllerLogin.securestate(),
-                                  valide: (p0) {
-                                    return validInput(p0!, 4, 100, "password");
-                                  },
-                                  textEditingController:
-                                      controllerLogin.passwordTextController,
-                                  textInputType: TextInputType.visiblePassword,
-                                  icone: controllerLogin.secure.value == false
-                                      ? Icon(Icons.lock_open_outlined)
-                                      : Icon(Icons.lock_outline_rounded),
-                                  labeltext: "19".tr,
-                                  hintText: "13".tr);
-                            }),
-                            SizedBox(
-                              height: 25,
-                            ),
-                            RememberForgetWidget(),
-                            SizedBox(
-                              height: 25,
-                            ),
-                            ContinueBottonWidget(
-                              text: "9".tr,
-                              onpressed: () {
-                                controllerLogin.login();
-                              },
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            OtherWaySignIn(),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            CustomeBottom(
-                              text1: "16".tr,
-                              text2: "17".tr,
-                              ontap: () {
-                                controllerLogin.toPageSignUp();
-                                //print('go to signup');
-                              },
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+        return HandlingDataView(
+          controllerLogin.statusResquest,
+          widget: SingleChildScrollView(
+            child: Column(
+              children: [
+                Logo(),
+                CustomeTextTitlewidget(
+                  text: '10'.tr,
+                  size: 30,
                 ),
-              );
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomeBodyText(body: "11".tr),
+                const SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Form(
+                    key: controllerLogin.globalKey,
+                    child: Column(
+                      children: [
+                        CustomeTextField(
+                            valide: (p0) {
+                              return validInput(p0!, 10, 100, "email");
+                            },
+                            textEditingController:
+                                controllerLogin.emailAddressTextController,
+                            textInputType: TextInputType.emailAddress,
+                            icone: Icon(Icons.mail_outline_rounded),
+                            labeltext: "18".tr,
+                            hintText: "12".tr),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Obx(() {
+                          return CustomeTextField(
+                              secure: controllerLogin.secure.value,
+                              ontapicon: () => controllerLogin.securestate(),
+                              valide: (p0) {
+                                return validInput(p0!, 4, 100, "password");
+                              },
+                              textEditingController:
+                                  controllerLogin.passwordTextController,
+                              textInputType: TextInputType.visiblePassword,
+                              icone: controllerLogin.secure.value == false
+                                  ? Icon(Icons.lock_open_outlined)
+                                  : Icon(Icons.lock_outline_rounded),
+                              labeltext: "19".tr,
+                              hintText: "13".tr);
+                        }),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        RememberForgetWidget(),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        ContinueBottonWidget(
+                          text: "9".tr,
+                          onpressed: () {
+                            controllerLogin.login();
+                          },
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        OtherWaySignIn(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CustomeBottom(
+                          text1: "16".tr,
+                          text2: "17".tr,
+                          ontap: () {
+                            controllerLogin.toPageSignUp();
+                            //print('go to signup');
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
       }),
     );
   }

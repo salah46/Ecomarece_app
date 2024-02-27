@@ -13,8 +13,7 @@ class ResetPasswordController extends GetxController {
 
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
-  StatusResquest? statusResquest = StatusResquest.laoding;
-
+StatusResquest statusResquest = StatusResquest.begin;
   ResetPasswordData verifydata = ResetPasswordData(Get.find());
 
   toPageSucces() async {

@@ -12,8 +12,8 @@ class OnbaordController extends GetxController {
   next() {
     currentIndex++;
     if (currentIndex > onbaordinglist.length - 1) {
-      services.shredPrefrences.setString("firsttime", "1");
-      print(services.shredPrefrences.getString("firsttime"));
+      services.sharedPrefrences.setString("step", "1");
+    //  print(services.sharedPrefrences.getString("firsttime"));
       Get.offNamed(Approutes.login);
     }
     pageController.animateToPage(currentIndex.value,

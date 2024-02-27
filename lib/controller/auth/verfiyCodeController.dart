@@ -7,8 +7,7 @@ import 'package:get/get.dart';
 class VerefyController extends GetxController {
   late String verifyCode;
   
-  StatusResquest? statusResquest;
-  
+StatusResquest statusResquest = StatusResquest.begin;  
   VerifyResetCodeData verifydata = VerifyResetCodeData(Get.find());
 
   toResetPage(String verificationCode)async {

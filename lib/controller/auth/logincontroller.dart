@@ -2,18 +2,20 @@ import 'package:ecomarce_app_project/core/class/statusrequest.dart';
 import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/core/constant/routes.dart';
 import 'package:ecomarce_app_project/core/functions/handlingdata.dart';
+import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:ecomarce_app_project/data/datasource/remote/logindata.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
   late TextEditingController emailAddressTextController;
   late TextEditingController passwordTextController;
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   RxBool secure = false.obs;
-
-  StatusResquest? statusResquest;
+  Myservices services = Get.find();
+  StatusResquest statusResquest = StatusResquest.begin;
 
   LoginData loginData = LoginData(Get.find());
 
@@ -24,7 +26,7 @@ class LoginController extends GetxController {
   }
 
   toPageSignUp() {
-    Get.offNamed(Approutes.signup);
+    Get.toNamed(Approutes.signup);
   }
 
   toPageForgetPassword() {
@@ -47,13 +49,23 @@ class LoginController extends GetxController {
       //print(statusResquest.toString());
       if (StatusResquest.success == statusResquest) {
         if (responce['status'] == "success") {
+          services.sharedPrefrences
+              .setString("username", responce['data']['users_name']);
+          services.sharedPrefrences
+              .setString("useremail", responce['data']['users_email']);
+          services.sharedPrefrences
+              .setString("userphone", responce['data']['users_phone']);
+          services.sharedPrefrences
+              .setString("userdate", responce['data']['users_date']);
+          services.sharedPrefrences
+              .setString("userid", responce['data']['users_id']);
+          services.sharedPrefrences
+              .setString("step", "2");
           Get.offAllNamed(Approutes.homepage);
-        } else {
+        } else if (responce['status'] == "failure") {
           Get.defaultDialog(
               title: "Error", middleText: "Invalid Email or Password");
         }
-      } else {
-        Get.defaultDialog(middleText: statusResquest.toString());
       }
       update();
     } else {}
@@ -69,6 +81,7 @@ class LoginController extends GetxController {
 
   @override
   void dispose() {
+    globalKey.currentState!.dispose();
     emailAddressTextController.clear();
     passwordTextController.clear();
     super.dispose();

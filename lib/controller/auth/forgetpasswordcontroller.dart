@@ -10,7 +10,7 @@ class ForgetPasswordContrller extends GetxController {
 
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
-  StatusResquest? statusResquest;
+  StatusResquest statusResquest = StatusResquest.begin;
 
   CheckMailToResetPasswordData checkMailToResetPasswordData =
       CheckMailToResetPasswordData(Get.find());

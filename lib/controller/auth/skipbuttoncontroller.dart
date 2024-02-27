@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class SkipButtonController extends GetxController {
   Myservices services = Get.find();
   goToPageLogin() {
-    services.shredPrefrences.setString("firsttime", "1");
+    services.sharedPrefrences.setString("step", "1");
     Get.offAllNamed(Approutes.login);
   }
 }

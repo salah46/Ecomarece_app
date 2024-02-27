@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "290757325801",
+    "firebase_url": "https://ecommrceapp-e35a9-default-rtdb.firebaseio.com",
+    "project_id": "ecommrceapp-e35a9",
+    "storage_bucket": "ecommrceapp-e35a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290757325801:android:b81ad6c7b743c1b7e35178",
+        "android_client_info": {
+          "package_name": "com.Garroudji.ecomarce_app_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXPWB7VeT47fTqR7b8rIVbOsvViMQOH3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

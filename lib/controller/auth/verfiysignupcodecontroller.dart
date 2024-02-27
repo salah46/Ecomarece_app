@@ -7,8 +7,7 @@ import 'package:get/get.dart';
 class VerefySignUpCodeController extends GetxController {
   late String verifyCode;
   late VerifyData verifydata = VerifyData(Get.find());
-  late StatusResquest statusResquest;
-  checkverfysignupCode() {}
+StatusResquest statusResquest = StatusResquest.begin;  checkverfysignupCode() {}
 
   toSuccessSignUpPage(String verifycode) async {
     statusResquest = StatusResquest.laoding;

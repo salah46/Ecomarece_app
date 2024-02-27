@@ -13,8 +13,11 @@ class MiddleWare extends GetMiddleware {
   Myservices services = Get.find();
   @override
   RouteSettings? redirect(String? route) {
-    if (services.shredPrefrences.getString("firsttime") == "1") {
-    return   RouteSettings(name: Approutes.login);
+    if (services.sharedPrefrences.getString("step") == "2") {
+      return RouteSettings(name: Approutes.homepage);
+    }
+    if (services.sharedPrefrences.getString("step") == "1") {
+      return RouteSettings(name: Approutes.login);
     }
   }
 }

@@ -17,8 +17,7 @@ class SignUpController extends GetxController {
 
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
-  StatusResquest? statusResquest;
-
+StatusResquest statusResquest = StatusResquest.begin;
   SignupData testData = SignupData(Get.find());
 
   List data = [];

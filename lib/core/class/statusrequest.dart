@@ -4,5 +4,5 @@ enum StatusResquest {
   failure,
   serverfailure,
   offlinefailure,
-  serverexeception,
+  serverexeception, begin,
 }
