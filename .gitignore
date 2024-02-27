@@ -42,3 +42,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/home/salah/StudioProjects/ecomarce_app_project/lib/firebase_options.dart
