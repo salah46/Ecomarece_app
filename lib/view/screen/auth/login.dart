@@ -2,9 +2,7 @@
 
 import 'package:ecomarce_app_project/controller/auth/logincontroller.dart';
 import 'package:ecomarce_app_project/core/class/handlingdataview.dart';
-import 'package:ecomarce_app_project/core/class/statusrequest.dart';
 import 'package:ecomarce_app_project/core/constant/color.dart';
-import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/core/functions/validinput.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/cunstometexttitle.dart';
 import 'package:ecomarce_app_project/view/widget/authwindget/customeBottom.dart';
@@ -16,14 +14,12 @@ import 'package:ecomarce_app_project/view/widget/authwindget/otherwayslogin.dart
 import 'package:ecomarce_app_project/view/widget/authwindget/rememberforgetwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 class Login extends StatelessWidget {
-  Login({super.key});
+  const  Login({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(LoginController());
-    String? currentRouteName = ModalRoute.of(context)!.settings.name;
 
     return Scaffold(
       backgroundColor: Appcolor.white,

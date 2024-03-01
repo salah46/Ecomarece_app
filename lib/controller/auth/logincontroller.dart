@@ -1,13 +1,10 @@
 import 'package:ecomarce_app_project/core/class/statusrequest.dart';
-import 'package:ecomarce_app_project/core/constant/imagesconstant.dart';
 import 'package:ecomarce_app_project/core/constant/routes.dart';
 import 'package:ecomarce_app_project/core/functions/handlingdata.dart';
 import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:ecomarce_app_project/data/datasource/remote/logindata.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
   late TextEditingController emailAddressTextController;

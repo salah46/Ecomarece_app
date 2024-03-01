@@ -20,4 +20,5 @@ class AppImagesConstantes {
   static String serverfailure = "$lottieroot/error404.json";
 
   static String offline = "$lottieroot/offline.json";
+  static String shopping = "$lottieroot/shopping.json";
 }

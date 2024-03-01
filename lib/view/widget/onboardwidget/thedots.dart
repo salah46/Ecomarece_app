@@ -29,6 +29,7 @@ class TheDots extends StatelessWidget {
               ),
               margin: EdgeInsets.symmetric(horizontal: 5),
               duration: Duration(milliseconds: 900),
+              // ignore: unrelated_type_equality_checks
               width: controller.currentIndex == index ? 50 : 15,
               height: 5,
             );

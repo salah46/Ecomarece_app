@@ -5,7 +5,7 @@ import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+@immutable
 class ContinueButton extends StatelessWidget {
   ContinueButton({super.key});
   OnbaordController controller = Get.put(OnbaordController());
@@ -15,7 +15,7 @@ class ContinueButton extends StatelessWidget {
       radius: 33,
       backgroundColor: Appcolor.purple,
       child: IconButton(onPressed: () {
-        print(controller.currentIndex);
+        //print(controller.currentIndex);
         controller.next();
       }, icon: Obx(
         () {

@@ -32,6 +32,7 @@ dependencies:
   dartz: ^0.10.1
   shared_preferences:
   get: 
+  draggable_home: 
   flutter:
     sdk: flutter
 
@@ -43,6 +44,7 @@ dependencies:
   http: ^0.13.6
   firebase_core: ^2.24.2
   firebase_messaging: ^14.7.10
+  flutter_svg: ^2.0.5
 
 dev_dependencies:
   flutter_test:
