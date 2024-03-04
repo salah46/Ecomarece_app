@@ -7,7 +7,6 @@ import 'package:lottie/lottie.dart';
 
 class AdsSpace extends StatelessWidget {
   final String username;
-
   const AdsSpace({super.key, required this.username});
 
   @override
@@ -24,6 +23,9 @@ class AdsSpace extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Stack(
                       children: [
+                        //==========================
+                        //      The offer title
+                        //==========================
                         Padding(
                           padding: const EdgeInsets.only(top: 140.0),
                           child: ListTile(
@@ -35,6 +37,9 @@ class AdsSpace extends StatelessWidget {
                                   .copyWith(color: Appcolor.white)
                                   .copyWith(fontSize: 20),
                             ),
+                            //==========================
+                            //      The offer content
+                            //==========================
                             subtitle: Text(username,
                                 style: Theme.of(context)
                                     .textTheme
@@ -43,6 +48,9 @@ class AdsSpace extends StatelessWidget {
                                     .copyWith(fontSize: 40)),
                           ),
                         ),
+                        //==========================
+                        //       The offer image
+                        //==========================
                         Positioned(
                             bottom: 10,
                             right: -50,
@@ -52,6 +60,9 @@ class AdsSpace extends StatelessWidget {
                     );
                   }),
             ),
+            //==========================
+            //       The adspace dots bar
+            //==========================
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

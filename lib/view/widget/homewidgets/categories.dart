@@ -15,7 +15,11 @@ class Categories extends StatelessWidget {
     return GetBuilder<HomeController>(builder: (controller) {
       return Column(
         children: [
+          //==========================
+          //      The title 
+          //==========================
           Row(
+
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, left: 8, right: 8),
@@ -26,6 +30,9 @@ class Categories extends StatelessWidget {
               ),
             ],
           ),
+           //==========================
+          //      The categories display
+          //==========================
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: SizedBox(
