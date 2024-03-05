@@ -14,55 +14,41 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
-    return Scaffold(
-      drawer: Drawer(),
-      body: GetBuilder<HomeController>(builder: (controller) {
-        return HandlingDataView(controller.statusResquest,
-            widget: CustomScrollView(
-              shrinkWrap: false,
-              slivers: [
-                SliverAppBar(
-                  pinned: true,
-                  title: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Expanded(
-                            child: Padding(
-                          padding: EdgeInsets.only(right: 10.0, left: 8),
-                          child: SizedBox(
-                            width: 50,
-                            child: SearchProductBar(),
-                          ),
-                        )),
-                        ButtonIcon(
-                          icon: const Icon(Icons.shopping_cart_outlined),
-                          onPressed: () {},
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ButtonIcon(
-                          icon: const Icon(Icons.notifications_none_rounded),
-                          onPressed: () {},
-                        )
-                      ],
-                    ),
-                  ),
-                  expandedHeight: 320,
-                  floating: true,
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: AdsSpace(username: "mohammed"),
+    return GetBuilder<HomeController>(builder: (controller) {
+      return HandlingDataView(controller.statusResquest,
+          widget: CustomScrollView(
+            shrinkWrap: false,
+            slivers: [
+              SliverAppBar(
+                pinned: true,
+                title: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SearchProductBar(
+                        text: 'Find prouduct',
+                        onTapSearch: () {},
+                      ),
+                      ButtonIcon(
+                        icon: const Icon(Icons.notifications_none_rounded),
+                        onPressed: () {},
+                      )
+                    ],
                   ),
                 ),
-                SliverList(
-                    delegate: SliverChildListDelegate(<Widget>[
-                  Body(),
-                ]))
-              ],
-            ));
-      }),
-    );
+                expandedHeight: 320,
+                floating: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: AdsSpace(username: "mohammed"),
+                ),
+              ),
+              SliverList(
+                  delegate: SliverChildListDelegate(<Widget>[
+                Body(),
+              ]))
+            ],
+          ));
+    });
   }
 }

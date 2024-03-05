@@ -9,13 +9,15 @@ class ButtonIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 40,
+      height: 40,
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 245, 243, 243),
           borderRadius: BorderRadius.circular(50)),
       child: IconButton(
         onPressed: () => onPressed,
         icon: icon,
-        color:const  Color.fromARGB(255, 114, 114, 112),
+        color: const Color.fromARGB(255, 114, 114, 112),
       ),
     );
   }

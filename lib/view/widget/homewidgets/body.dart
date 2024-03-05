@@ -14,7 +14,7 @@ class Body extends StatelessWidget {
     return Container(
       color: Appcolor.warmPearlGray,
       child: Column(
-        children: [Categories(), Items()],
+        children: [Categories(title: 'Categories',), Items(title: "Offers for you",)],
       ),
     );
   }

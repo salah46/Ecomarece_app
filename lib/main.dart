@@ -15,6 +15,7 @@ import 'core/localization/translations.dart';
 import 'view/screen/auth/forgetpassword.dart';
 import 'view/screen/auth/verifyresetcode.dart';
 import 'view/screen/langchoose.dart';
+import 'view/screen/themain.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
       ),
       getPages: getPages,
       initialBinding: InitialBinding(),
+      home: TheMain(),
     );
   }
 }

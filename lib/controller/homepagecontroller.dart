@@ -11,6 +11,7 @@ class HomeController extends GetxController {
 
   HomeData homeData = HomeData(Get.find());
   List categories = [];
+  List items = [];
 
   late StatusResquest statusResquest = StatusResquest.begin;
 
@@ -21,6 +22,7 @@ class HomeController extends GetxController {
     if (statusResquest == StatusResquest.success) {
       if (responce['status'] == 'success') {
         categories.addAll(responce['categories']);
+        items.addAll(responce['items']);
       } else {
         statusResquest = StatusResquest.failure;
       }
