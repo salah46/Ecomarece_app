@@ -46,6 +46,7 @@ dependencies:
   firebase_messaging: ^14.7.10
   flutter_svg: ^2.0.5
   stylish_bottom_bar: 
+  email_otp: ^2.0.1
 
 dev_dependencies:
   flutter_test:

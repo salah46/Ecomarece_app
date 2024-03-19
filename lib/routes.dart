@@ -8,7 +8,8 @@ import 'package:ecomarce_app_project/view/screen/auth/signup.dart';
 import 'package:ecomarce_app_project/view/screen/auth/successreset.dart';
 import 'package:ecomarce_app_project/view/screen/auth/verfiysignupcode.dart';
 import 'package:ecomarce_app_project/view/screen/auth/verifyresetcode.dart';
-import 'package:ecomarce_app_project/view/screen/home.dart';
+import 'package:ecomarce_app_project/view/screen/homepage.dart';
+import 'package:ecomarce_app_project/view/screen/itemspage.dart';
 import 'package:ecomarce_app_project/view/screen/langchoose.dart';
 import 'package:ecomarce_app_project/view/screen/auth/login.dart';
 import 'package:get/get.dart';
@@ -29,4 +30,5 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: Approutes.successsignup, page: () => SuccessSignup()),
   GetPage(name: Approutes.verifysignupcode, page: () => VerifySignupCode()),
   GetPage(name: Approutes.homepage, page: () => HomePage()),
+  GetPage(name: Approutes.itemspage, page: () => Items()),
 ];

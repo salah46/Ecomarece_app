@@ -8,6 +8,8 @@ import 'package:ecomarce_app_project/view/widget/onboardwidget/slider.dart';
 import 'package:ecomarce_app_project/view/widget/onboardwidget/thedots.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:email_otp/email_otp.dart';
+
 
 import '../../data/datasource/static/static.dart';
 

@@ -1,4 +1,5 @@
 import 'package:ecomarce_app_project/core/class/statusrequest.dart';
+import 'package:ecomarce_app_project/core/constant/routes.dart';
 import 'package:ecomarce_app_project/core/functions/handlingdata.dart';
 import 'package:ecomarce_app_project/core/services/service.dart';
 import 'package:ecomarce_app_project/data/datasource/remote/homedata.dart';
@@ -28,6 +29,13 @@ class HomeController extends GetxController {
       }
     }
     update();
+  }
+
+  goToItemsPage(List categories, int selectedCategory) {
+    Get.toNamed(Approutes.itemspage, arguments: {
+      "selectedCategory": selectedCategory,
+      "categories": categories
+    });
   }
 
   @override

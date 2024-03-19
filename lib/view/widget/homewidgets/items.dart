@@ -5,15 +5,13 @@ import 'package:ecomarce_app_project/data/model/items.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Items extends StatelessWidget {
+class ItemsHome extends GetView<HomeController> {
   final String title;
 
-  const Items({Key? key, required this.title}) : super(key: key);
+  const ItemsHome({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    HomeController controller = Get.find();
-
     return Column(
       children: [
         Padding(
@@ -29,39 +27,38 @@ class Items extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GetBuilder<HomeController>(
-            builder: (controller) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                width: double.infinity,
-                height: 200,
-                child: ListView.separated(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(width: 10),
-                    itemCount: controller.items.length,
-                    itemBuilder: (context, index) => ItemsList(
-                          onTap: () => print(controller.items[index]),
-                          itemModel:
-                              ItemsModel.fromJson(controller.items[index]),
-                        )),
-              );
-            },
-          ),
-        ),
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              width: double.infinity,
+              height: 200,
+              child: GetBuilder<HomeController>(
+                builder: (controller) {
+                  return ListView.separated(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 10),
+                      itemCount: controller.items.length,
+                      itemBuilder: (context, index) => ItemsListHome(
+                            onTap: () => print(controller.items[index]),
+                            itemModel:
+                                ItemsModel.fromJson(controller.items[index]),
+                          ));
+                },
+              ),
+            )),
       ],
     );
   }
 }
 
-class ItemsList extends StatelessWidget {
+class ItemsListHome extends StatelessWidget {
   final ItemsModel itemModel;
   final void Function()? onTap;
-  const ItemsList({super.key, required this.itemModel, this.onTap});
+  const ItemsListHome({super.key, required this.itemModel, this.onTap});
 
   @override
   Widget build(BuildContext context) {

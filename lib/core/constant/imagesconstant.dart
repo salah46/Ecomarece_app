@@ -16,9 +16,7 @@ class AppImagesConstantes {
   static String done = "$root/done.png";
   static String checkidmail = "$root/checkmail.png";
   static String loading = "$lottieroot/loading.json";
-
   static String serverfailure = "$lottieroot/error404.json";
-
   static String offline = "$lottieroot/offline.json";
   static String shopping = "$lottieroot/shopping.json";
 }

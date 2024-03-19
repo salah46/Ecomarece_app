@@ -1,6 +1,6 @@
 import 'package:ecomarce_app_project/core/constant/color.dart';
 import 'package:ecomarce_app_project/view/screen/auth/signup.dart';
-import 'package:ecomarce_app_project/view/screen/home.dart';
+import 'package:ecomarce_app_project/view/screen/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stylish_bottom_bar/model/bar_items.dart';

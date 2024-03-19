@@ -2,15 +2,14 @@
 
 import 'package:ecomarce_app_project/controller/homepagecontroller.dart';
 import 'package:ecomarce_app_project/core/class/handlingdataview.dart';
+import 'package:ecomarce_app_project/view/widget/headerwidget.dart';
 import 'package:ecomarce_app_project/view/widget/homewidgets/body.dart';
-import 'package:ecomarce_app_project/view/widget/homewidgets/buttons.dart';
 import 'package:ecomarce_app_project/view/widget/homewidgets/adspace.dart';
-import 'package:ecomarce_app_project/view/widget/homewidgets/searchprouducttextfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
@@ -21,22 +20,7 @@ class HomePage extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 pinned: true,
-                title: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SearchProductBar(
-                        text: 'Find prouduct',
-                        onTapSearch: () {},
-                      ),
-                      ButtonIcon(
-                        icon: const Icon(Icons.notifications_none_rounded),
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                ),
+                title: HeaderWidget(),
                 expandedHeight: 320,
                 floating: true,
                 flexibleSpace: FlexibleSpaceBar(
@@ -44,11 +28,15 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SliverList(
-                  delegate: SliverChildListDelegate(<Widget>[
+                  delegate: SliverChildListDelegate(
+                    <Widget>[
                 Body(),
               ]))
             ],
           ));
     });
   }
+
+  
 }
+
